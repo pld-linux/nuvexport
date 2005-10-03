@@ -15,20 +15,18 @@ Source0:	http://forevermore.net/files/nuvexport/%{name}-%{version}-0.%{_snap}.sv
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://forevermore.net/nuvexport/
 BuildRequires:	rpm-perlprov >= 4.1-13
-Requires:	perl-DBD-mysql
-Requires:	transcode >= 0.6.12
-Requires:	ffmpeg >= 0.4.9
-Requires:	mjpegtools >= 1.6.2
-# probably for mencoder program
-Requires:	mplayer
+# for mpeg2cut
+Requires:	avidemux >= 2
 %ifarch %{ix86}
 Requires:	divx4linux
 %endif
-# mpeg2cut needs some others:
-Requires:	avidemux >= 2
-#Requires:	lve
-# Actually requires the id3tag program, but it lives in this package
+Requires:	ffmpeg >= 0.4.9
 Requires:	id3lib-utils
+#Requires:	lve # not finished spec
+Requires:	mencoder
+Requires:	mjpegtools >= 1.6.2
+Requires:	perl-DBD-mysql
+Requires:	transcode >= 0.6.12
 # Provides some of its own perl modules -- rpm complains if this isn't included
 Provides:	perl(nuvexport::shared_utils)
 BuildArch:	noarch
