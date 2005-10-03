@@ -1,10 +1,12 @@
+# TODO
+# - remove all encoder deps and show in post banner what could be installed?
 %include	/usr/lib/rpm/macros.perl
 Summary:	MythTV nuv video file conversion script
 Summary(pl):	Skrypt do konwersji plików video nuv z MythTV
 Name:		nuvexport
 Version:	0.2
 %define	_snap 20050922
-%define	_rel 1
+%define	_rel 1.1
 Release:	0.%{_snap}.%{_rel}
 License:	GPL
 Group:		Applications/Multimedia
@@ -13,23 +15,22 @@ Source0:	http://forevermore.net/files/nuvexport/%{name}-%{version}-0.%{_snap}.sv
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://forevermore.net/nuvexport/
 BuildRequires:	rpm-perlprov >= 4.1-13
-Requires:	divx4linux
+Requires:	perl-DBD-mysql
+Requires:	transcode >= 0.6.12
 Requires:	ffmpeg >= 0.4.9
 Requires:	mjpegtools >= 1.6.2
+# probably for mencoder program
 Requires:	mplayer
-#Requires:	perl-base >= 1:5.6
-#Requires:	perl-DateManip
-#Requires:	perl-DBD-MySQL
-#Requires:	perl-DBI
-#Requires:	perl-Time-HiRes
-Requires:	transcode >= 0.6.12
+%ifarch %{ix86}
+Requires:	divx4linux
+%endif
 # mpeg2cut needs some others:
-Requires:	avidemux2 >= 2
-Requires:	lve
-# Actually requires the id3tag program, but it lives in this library
-Requires:	id3lib
+Requires:	avidemux >= 2
+#Requires:	lve
+# Actually requires the id3tag program, but it lives in this package
+Requires:	id3lib-utils
 # Provides some of its own perl modules -- rpm complains if this isn't included
-#Provides:	perl(nuvexport::shared_utils)
+Provides:	perl(nuvexport::shared_utils)
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
