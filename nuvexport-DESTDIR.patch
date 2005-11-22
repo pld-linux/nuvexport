@@ -1,0 +1,39 @@
+--- nuvexport-0.2/Makefile~	2005-07-23 21:04:25.000000000 +0300
++++ nuvexport-0.2/Makefile	2005-09-25 13:53:00.000000000 +0300
+@@ -65,28 +65,28 @@
+ install:
+ 	# First the binaries
+ 	@for i in ${BINS} ; do \
+-	   ${INSTALL} -Dv ${OWNER} -m 0755 $$i ${bindir}/$$i; \
++	   ${INSTALL} -Dv ${OWNER} -m 0755 $$i $(DESTDIR)${bindir}/$$i; \
+ 	done
+ 	# Then the config file(s)
+ 	@for i in ${CONF} ; do \
+-	   if [ -e "${sysconfdir}"/"$$i" ]; then \
+-	      ${INSTALL} -Dv ${OWNER} -m 0755 $$i ${sysconfdir}/$$i.dist; \
++	   if [ -e "$(DESTDIR)${sysconfdir}"/"$$i" ]; then \
++	      ${INSTALL} -Dv ${OWNER} -m 0755 $$i $(DESTDIR)${sysconfdir}/$$i.dist; \
+ 	   else \
+-	      ${INSTALL} -Dv ${OWNER} -m 0755 $$i ${sysconfdir}/$$i; \
++	      ${INSTALL} -Dv ${OWNER} -m 0755 $$i $(DESTDIR)${sysconfdir}/$$i; \
+ 	   fi \
+ 	done
+ 	# Install the mode symlinks
+ 	@for i in ${NUVEXPORT_LINKS} ; do \
+-	   ln -fs nuvexport ${bindir}/nuvexport-$$i; \
++	   ln -fs nuvexport $(DESTDIR)${bindir}/nuvexport-$$i; \
+ 	done
+ 	# Install the modules
+ 	@for i in ${MODULES} ; do \
+-	   ${INSTALL} -Dv ${OWNER} -m 0755 $$i ${MODDIR}/$$i; \
++	   ${INSTALL} -Dv ${OWNER} -m 0755 $$i $(DESTDIR)${MODDIR}/$$i; \
+ 	done
+ 	# Install the man page
+-	@${INSTALL} -dv ${OWNER} -m 0755 ${MAN1DIR}
++	@${INSTALL} -dv ${OWNER} -m 0755 $(DESTDIR)${MAN1DIR}
+ 	@for i in ${MANS} ; do \
+-	   ${INSTALL} -v ${OWNER} -m 0644 $$i ${MAN1DIR}; \
++	   ${INSTALL} -v ${OWNER} -m 0644 $$i $(DESTDIR)${MAN1DIR}; \
+ 	done
+ 
+ 
