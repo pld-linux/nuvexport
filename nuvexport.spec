@@ -4,14 +4,12 @@
 Summary:	MythTV nuv video file conversion script
 Summary(pl):	Skrypt do konwersji plików video nuv z MythTV
 Name:		nuvexport
-Version:	0.2
-%define	_snap 20060125
-%define	_rel 1
-Release:	0.%{_snap}.%{_rel}
+Version:	0.3
+Release:	1
 License:	GPL
 Group:		Applications/Multimedia
-Source0:	http://forevermore.net/files/nuvexport/%{name}-%{version}-0.%{_snap}.svn.tar.bz2
-# Source0-md5:	df92b628a153fa855ecfe63c6a9e596f
+Source0:	http://forevermore.net/files/nuvexport/%{name}-%{version}.tar.bz2
+# Source0-md5:	98daf35eca2bd936f214bb68059a7da5
 Patch0:		%{name}-DESTDIR.patch
 URL:		https://svn.forevermore.net/nuvexport/
 BuildRequires:	rpm-perlprov >= 4.1-13
