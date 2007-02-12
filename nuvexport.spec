@@ -2,7 +2,7 @@
 # - remove all encoder deps and show in post banner what could be installed?
 %include	/usr/lib/rpm/macros.perl
 Summary:	MythTV nuv video file conversion script
-Summary(pl):	Skrypt do konwersji plik體 video nuv z MythTV
+Summary(pl.UTF-8):   Skrypt do konwersji plik贸w video nuv z MythTV
 Name:		nuvexport
 Version:	0.3
 Release:	1
@@ -36,10 +36,10 @@ capable of letting users choose shows from their MythTV database and
 convert them to one of several different formats, including SVCD/DVD
 MPEG and XviD AVI.
 
-%description -l pl
-nuvexport to skrypt Perla b阣眂y wrapperem do kilku koder體,
-umo縧iwiaj眂y u縴tkownikom wy秝ietlanie bazy danych MythTV i
-konwertowanie jej do jednego z kilku r罂nych format體, w tym SVCD/DVD
+%description -l pl.UTF-8
+nuvexport to skrypt Perla b臋d膮cy wrapperem do kilku koder贸w,
+umo偶liwiaj膮cy u偶ytkownikom wy艣wietlanie bazy danych MythTV i
+konwertowanie jej do jednego z kilku r贸偶nych format贸w, w tym SVCD/DVD
 MPEG oraz XviD AVI.
 
 %prep
