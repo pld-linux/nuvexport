@@ -2,7 +2,7 @@
 # - remove all encoder deps and show in post banner what could be installed?
 %include	/usr/lib/rpm/macros.perl
 Summary:	MythTV nuv video file conversion script
-Summary(pl.UTF-8):   Skrypt do konwersji plików video nuv z MythTV
+Summary(pl.UTF-8):	Skrypt do konwersji plików video nuv z MythTV
 Name:		nuvexport
 Version:	0.3
 Release:	1
